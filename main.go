@@ -26,4 +26,15 @@ func main() {
 		fmt.Println(value)
 	}
 
+	commentTask()
+}
+
+// задача из коммента к уроку
+func commentTask() {
+	ch := make(chan int)
+	number := 42
+	go func(num int) { ch <- num }(number)
+	chValue := <-ch
+	fmt.Println("значение канала: ", chValue)
+
 }
